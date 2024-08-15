@@ -1,0 +1,1214 @@
+body {
+  background-color: rgb(196, 196, 196);
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  display: grid;
+  grid-template-columns: 1fr;
+  background-color: #000;
+  color: #fff;
+  height: 50px;
+  margin: 0;
+  padding: 0;
+}
+
+header .header-container {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
+
+header .header-container img {
+  width: 45px;
+  height: 45px;
+  margin: 0 20px;
+}
+
+header .header-container div {
+  display: flex;
+  align-items: center;
+}
+
+header .header-container div h1 {
+  font-size: 1.3rem;
+}
+
+header .header-container div img {
+  width: 30px;
+  height: 30px;
+}
+
+header .profile-dropdown {
+  position: relative;
+  cursor: pointer;
+}
+
+header .profile-dropdown-content {
+  position: absolute;
+  top: 35px;
+  opacity: 0;
+  display: grid;
+  place-items: center;
+  height: 0px;
+  width: 160px;
+  overflow: hidden;
+  padding: 10px;
+  margin-top: 15px;
+  margin-left: 30px;
+  z-index: 11;
+  transition: 0.5s ease;
+}
+
+header .profile-dropdown-content.active {
+  opacity: 1;
+  background-color: #fff;
+  height: 50px;
+}
+
+header .profile-dropdown-content button {
+  width: 100%;
+  height: 40px;
+  font-size: 1rem;
+  margin: 5px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+header .profile-dropdown-content img {
+  width: 25px;
+  height: 25px;
+  margin-right: 5px;
+  padding: 0;
+}
+
+header .profile-dropdown-content button:hover {
+  background-color: #a7a7a7;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  height: 100vh;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+aside {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+aside .logo {
+  width: 100%;
+}
+
+aside button {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  background-color: transparent;
+  color: #000;
+  border: none;
+  padding: 10px 40px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+aside button:hover {
+  background-color: rgb(196, 196, 196);
+}
+
+aside button img {
+  width: 36px;
+  height: 36px;
+  margin-right: 10px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+main .h1-label {
+  position: absolute;
+  top: -10px;
+  left: 10px;
+  font-size: 1.9rem;
+  z-index: 1;
+}
+
+/* DASHBOARD ========================================================================================================================================================== */
+.dashboard-container {
+  display: none;
+  grid-template-columns: repeat(2, 1fr);
+  place-items: center;
+  width: 100%;
+}
+
+.dashboard-container .dashboard-card {
+  display: grid;
+  place-items: center;
+  background-color: var(--color-btn-green-1);
+  width: 300px;
+  color: #fff;
+  margin: 10px;
+  border: none;
+  border-radius: 30px;
+  padding: 10px;
+}
+
+.dashboard-container .dashboard-card img {
+  width: 70px;
+}
+
+.dashboard-container .dashboard-card h1 {
+  font-size: 2.6rem;
+  margin: 0;
+  padding: 20px 0;
+}
+
+.dashboard-container .dashboard-card h2 {
+  font-size: 2rem;
+  margin: 0;
+  padding: 0;
+}
+/* DASHBOARD END ========================================================================================================================================================== */
+
+.btn-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.btn-container button {
+  /* width: 20%; */
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+/* TOOLS ========================================================================================================================================================== */
+.tools-container {
+  display: none;
+  grid-template-columns: 1, 1fr;
+  width: 98%;
+  margin: 70px 0;
+}
+
+.tools-container .btn-add-tools {
+  background-color: var(--color-btn-green);
+}
+
+.tools-container #btn-tools-change-date {
+  background-color: #231f20;
+  font-size: 1.1rem;
+}
+
+.tools-container table {
+  border-collapse: collapse;
+  min-height: 70vh;
+  table-layout: fixed;
+}
+
+.tools-container thead {
+  background-color: #000;
+  color: #fff;
+  display: table;
+  width: 100%;
+}
+
+.tools-container thead td {
+  width: 20%;
+  padding: 10px 1% 10px 0;
+  text-align: center;
+  font-weight: bold;
+  box-sizing: border-box;
+}
+
+.tools-container tbody {
+  background-color: #fff;
+  text-align: center;
+  display: block;
+  max-height: 70vh;
+  width: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.tools-container tbody tr {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+  border-bottom: 1px solid #000;
+}
+
+.tools-container tbody td {
+  padding: 10px 0;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.tools-container tbody td img {
+  width: 70px;
+}
+
+.tools-container tbody td:nth-child(1) input[type="radio"] {
+  /* width: 100%; */
+  cursor: pointer;
+}
+
+.tools-container tbody td:nth-child(1) p {
+  font-size: 0.9rem;
+  padding: 0;
+  margin: 0;
+}
+
+.tools-container thead td:nth-child(1),
+.tools-container tbody td:nth-child(1) {
+  width: 4%;
+}
+
+.tools-container thead td:nth-child(2),
+.tools-container tbody td:nth-child(2) {
+  width: 14%;
+}
+
+.tools-container thead td:nth-child(3),
+.tools-container tbody td:nth-child(3) {
+  width: 14%;
+}
+
+.tools-container thead td:nth-child(4),
+.tools-container tbody td:nth-child(4) {
+  width: 14%;
+}
+
+.tools-container thead td:nth-child(5),
+.tools-container tbody td:nth-child(5) {
+  width: 14%;
+}
+
+.tools-container thead td:nth-child(6),
+.tools-container tbody td:nth-child(6) {
+  width: 14%;
+}
+
+.tools-container thead td:nth-child(7),
+.tools-container tbody td:nth-child(7) {
+  width: 12%;
+}
+
+.tools-container .btn-edit,
+.tools-container .btn-delete {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.tools-container .btn-edit:hover,
+.tools-container .btn-delete:hover {
+  background-color: rgb(199, 199, 199);
+}
+
+.tools-container .btn-edit img,
+.tools-container .btn-delete img {
+  width: 25px;
+}
+
+.tools-container .add-tools-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  right: 50%;
+  transform: translate(-50%, -50%);
+  max-height: 93vh;
+  width: 525px;
+
+  display: none;
+  flex-direction: column;
+  background: rgb(172, 172, 172);
+  padding: 20px;
+  box-sizing: border-box;
+  z-index: 10;
+}
+
+.tools-container .add-tools-container.active {
+  display: flex;
+}
+
+.tools-container .add-tools-container .tools-inp-field {
+  overflow-y: auto;
+}
+
+.tools-container .add-tools-container input {
+  margin-bottom: 20px;
+  font-size: 1.3rem;
+  padding: 10px;
+  width: 440px;
+}
+
+.tools-container .add-tools-container button {
+  font-size: 1.2rem;
+  font-weight: bold;
+  background-color: var(--color-btn-green);
+  color: #fff;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 10px;
+  /* width: 463px; */
+}
+
+.tools-container .add-tools-container .btn-close-add-tools {
+  position: inherit;
+  top: 0;
+  width: 40px;
+  height: 40px;
+  right: -50px;
+  background-color: rgb(172, 172, 172);
+  color: #000;
+}
+
+/* TOOLS END ========================================================================================================================================================== */
+
+/* MACHINERY ========================================================================================================================================================== */
+.machinery-container {
+  display: none;
+  grid-template-columns: 1, 1fr;
+  width: 98%;
+  margin: 70px 0 0 0;
+}
+
+.machinery-container .btn-add-machinery {
+  background-color: var(--color-btn-green);
+}
+
+.machinery-container #btn-machinery-change-date {
+  background-color: #231f20;
+  font-size: 1.1rem;
+}
+
+.machinery-container #btn-machinery-add-operator,
+.machinery-container #btn-machinery-remove-operator {
+  background-color: #2b3620;
+}
+
+.machinery-container table {
+  border-collapse: collapse;
+  min-height: 75vh;
+  table-layout: fixed;
+}
+
+.machinery-container thead {
+  background-color: #000;
+  color: #fff;
+  display: table;
+  width: 100%;
+}
+
+.machinery-container thead td {
+  width: 16.66%;
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
+  box-sizing: border-box;
+}
+
+.machinery-container tbody {
+  background-color: #fff;
+  text-align: center;
+  display: block;
+  max-height: 70vh;
+  width: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.machinery-container tbody tr {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+  border-bottom: 1px solid #000;
+}
+
+.machinery-container tbody td {
+  padding: 10px 0;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.machinery-container tbody td:nth-child(1) input[type="radio"] {
+  cursor: pointer;
+}
+
+.machinery-container tbody td:nth-child(1) p {
+  font-size: 0.9rem;
+  padding: 0;
+  margin: 0;
+}
+
+.machinery-container thead td:nth-child(1),
+.machinery-container tbody td:nth-child(1) {
+  width: 4%;
+}
+
+.machinery-container thead td:nth-child(2),
+.machinery-container tbody td:nth-child(2) {
+  width: 14%;
+}
+
+.machinery-container thead td:nth-child(3),
+.machinery-container tbody td:nth-child(3) {
+  width: 14%;
+}
+
+.machinery-container thead td:nth-child(4),
+.machinery-container tbody td:nth-child(4) {
+  width: 12%;
+}
+
+.machinery-container thead td:nth-child(5),
+.machinery-container tbody td:nth-child(5) {
+  width: 12%;
+}
+
+.machinery-container thead td:nth-child(6),
+.machinery-container tbody td:nth-child(6) {
+  width: 10%;
+}
+
+.machinery-container thead td:nth-child(7),
+.machinery-container tbody td:nth-child(7) {
+  width: 10%;
+}
+
+.machinery-container thead td:nth-child(8),
+.machinery-container tbody td:nth-child(8) {
+  width: 14%;
+}
+
+.machinery-container tbody td:nth-child(9) {
+  width: 8%;
+}
+
+.machinery-container tbody td img {
+  width: 70px;
+}
+
+.machinery-container .btn-edit,
+.machinery-container .btn-delete {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.machinery-container .btn-edit:hover,
+.machinery-container .btn-delete:hover {
+  background-color: rgb(199, 199, 199);
+}
+
+.machinery-container .btn-edit img,
+.machinery-container .btn-delete img {
+  width: 25px;
+}
+
+#add-overlay {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  width: 100%;
+  z-index: 9;
+  display: none;
+}
+
+#add-overlay.active {
+  display: block;
+}
+
+.machinery-container .add-machinery-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  right: 50%;
+  transform: translate(-50%, -50%);
+  max-height: 90vh;
+  width: 520px;
+
+  display: none;
+  flex-direction: column;
+  background: rgb(172, 172, 172);
+  padding: 20px;
+  z-index: 10;
+}
+
+.machinery-container .add-machinery-container.active {
+  display: flex;
+}
+
+.machinery-container .add-machinery-container .machinery-inp-field {
+  overflow-y: auto;
+}
+
+.machinery-container .add-machinery-container input {
+  margin-bottom: 20px;
+  font-size: 1.3rem;
+  padding: 10px;
+  width: 475px;
+}
+
+.machinery-container .add-machinery-container button {
+  font-size: 1.2rem;
+  font-weight: bold;
+  background-color: var(--color-btn-green);
+  color: #fff;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.machinery-container .add-machinery-container .btn-close-add-machinery {
+  position: inherit;
+  top: 0;
+  width: 40px;
+  height: 40px;
+  right: -50px;
+  background-color: rgb(172, 172, 172);
+  color: #000;
+}
+
+/*  ========================================================================================================================================================== */
+
+.add-machinery-operator {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgb(172, 172, 172);
+  width: 60vw;
+  padding: 20px;
+  border-radius: 20px;
+  z-index: 11;
+}
+
+.add-machinery-operator.active {
+  display: block;
+}
+
+.add-machinery-operator .top-container {
+  display: grid;
+  grid-template-columns: 25% 70%;
+  gap: 20px;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.add-machinery-operator .left-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.add-machinery-operator .left-container img {
+  height: 200px;
+  width: 200px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.add-machinery-operator .left-container input {
+  width: 100%;
+}
+
+.add-machinery-operator .right-container {
+  width: 100%;
+}
+
+.add-machinery-operator .inp-field {
+  display: grid;
+  grid-template-columns: 20% 1fr;
+  gap: 10px;
+  width: 100%;
+  margin: 10px 0;
+}
+
+.add-machinery-operator .right-container label {
+  font-size: 1.3rem;
+}
+
+.add-machinery-operator input {
+  font-size: 1.3rem;
+  padding: 5px 10px;
+}
+
+#btn-add-operator-cancel {
+  background-color: var(--color-btn-red);
+}
+
+#btn-add-operator-add {
+  background-color: var(--color-btn-green);
+}
+
+/*  ========================================================================================================================================================== */
+
+.machine-operators-container {
+  display: none;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  height: 90vh;
+  width: 90vw;
+  background-color: var(--color-bg-gray);
+  padding: 10px;
+  border-radius: 10px;
+  z-index: 11;
+}
+
+.machine-operators-container.active {
+  display: flex;
+}
+
+.machine-operators-container .machine-operator-header {
+  display: flex;
+  justify-content: flex-end;
+  text-align: center;
+  margin: 0;
+  /* padding: 10px; */
+  width: 100%;
+}
+
+.machine-operators-container .machine-operators-content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  place-items: center;
+  gap: 20px;
+  height: 90%;
+  width: 100%;
+  overflow: auto;
+}
+
+.machine-operators-container .machine-operator {
+  /* margin: 20px 10px; */
+  padding: 20px 10px;
+  background-color: #fff;
+  border: none;
+  border-radius: 20px;
+  width: 90%;
+}
+
+.machine-operators-container .machine-operator div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.machine-operators-container .machine-operator div h1 {
+  margin: 0;
+  padding: 10px 0;
+}
+
+.machine-operators-container .machine-operator img {
+  width: 100%;
+}
+
+.machine-operators-container .machine-operator button {
+  width: 100%;
+  height: 40px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  padding: 5px;
+  background-color: var(--color-btn-red);
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+#btn-machine-operator-close {
+  font-size: 1.4rem;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+/* MACHINERY END ========================================================================================================================================================== */
+
+/* LAND ========================================================================================================================================================== */
+.land-container {
+  display: none;
+  grid-template-columns: 1, 1fr;
+  width: 98%;
+  margin: 70px 0;
+}
+
+.land-container .btn-add-land {
+  background-color: var(--color-btn-green);
+}
+
+.land-container #btn-land-change-date {
+  background-color: #231f20;
+  font-size: 1.1rem;
+}
+
+.land-container table {
+  border-collapse: collapse;
+  min-height: 70vh;
+  table-layout: fixed;
+}
+
+.land-container thead {
+  background-color: #000;
+  color: #fff;
+  display: table;
+  width: 100%;
+}
+
+.land-container thead td {
+  width: 20%;
+  padding: 10px 1% 10px 0;
+  text-align: center;
+  font-weight: bold;
+  box-sizing: border-box;
+}
+
+.land-container tbody {
+  text-align: center;
+  background-color: #fff;
+  display: block;
+  max-height: 70vh;
+  width: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.land-container tbody tr {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+  border-bottom: 1px solid #000;
+}
+
+.land-container tbody td {
+  padding: 10px 0;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.land-container tbody td img {
+  width: 70px;
+}
+
+.land-container tbody td:nth-child(1) input[type="radio"] {
+  /* width: 100%; */
+  cursor: pointer;
+}
+
+.land-container tbody td:nth-child(1) p {
+  font-size: 0.9rem;
+  padding: 0;
+  margin: 0;
+}
+
+.land-container thead td:nth-child(1),
+.land-container tbody td:nth-child(1) {
+  width: 4%;
+}
+
+.land-container thead td:nth-child(2),
+.land-container tbody td:nth-child(2) {
+  width: 14%;
+}
+
+.land-container thead td:nth-child(3),
+.land-container tbody td:nth-child(3) {
+  width: 14%;
+}
+
+.land-container thead td:nth-child(4),
+.land-container tbody td:nth-child(4) {
+  width: 12%;
+}
+
+.land-container thead td:nth-child(5),
+.land-container tbody td:nth-child(5) {
+  width: 12%;
+}
+
+.land-container thead td:nth-child(6),
+.land-container tbody td:nth-child(6) {
+  width: 10%;
+}
+
+.land-container thead td:nth-child(7),
+.land-container tbody td:nth-child(7) {
+  width: 10%;
+}
+
+.land-container thead td:nth-child(8),
+.land-container tbody td:nth-child(8) {
+  width: 14%;
+}
+
+.land-container thead td:nth-child(9),
+.land-container tbody td:nth-child(9) {
+  width: 10%;
+}
+
+.land-container .btn-edit,
+.land-container .btn-delete {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.land-container .btn-edit:hover,
+.land-container .btn-delete:hover {
+  background-color: rgb(199, 199, 199);
+}
+
+.land-container .btn-edit img,
+.land-container .btn-delete img {
+  width: 25px;
+}
+
+.land-container .add-land-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  right: 50%;
+  transform: translate(-50%, -50%);
+  max-height: 90vh;
+  width: 520px;
+
+  display: none;
+  flex-direction: column;
+  background: rgb(172, 172, 172);
+  padding: 20px;
+  z-index: 10;
+}
+
+.land-container .add-land-container .land-inp-field {
+  overflow-y: auto;
+}
+
+.land-container .add-land-container.active {
+  display: flex;
+}
+
+.land-container .add-land-container input {
+  margin-bottom: 20px;
+  font-size: 1.3rem;
+  padding: 10px;
+  width: 475px;
+}
+
+.land-container .add-land-container button {
+  font-size: 1.2rem;
+  font-weight: bold;
+  background-color: var(--color-btn-green);
+  color: #fff;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 10px;
+  /* width: 499px; */
+}
+
+.land-container .add-land-container .btn-close-add-land {
+  position: inherit;
+  top: 0;
+  width: 40px;
+  height: 40px;
+  right: -50px;
+  background-color: rgb(172, 172, 172);
+  color: #000;
+}
+
+/* LAND END ================================================================================================================================ */
+
+/* TRANSACTION ============================================================================================================================ */
+.transaction-container {
+  display: none;
+  grid-template-columns: 1, 1fr;
+  width: 98%;
+  margin: 70px 0;
+}
+
+.transaction-container table {
+  border-collapse: collapse;
+  min-height: 70vh;
+  table-layout: fixed;
+}
+
+.transaction-container thead {
+  background-color: #000;
+  color: #fff;
+  display: table;
+  width: 100%;
+}
+
+.transaction-container thead td {
+  width: 20%;
+  padding: 10px 1% 10px 0;
+  text-align: center;
+  font-weight: bold;
+  box-sizing: border-box;
+}
+
+.transaction-container tbody {
+  text-align: center;
+  background-color: #fff;
+  display: block;
+  max-height: 70vh;
+  width: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.transaction-container tbody tr {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+  border-bottom: 1px solid #000;
+}
+
+.transaction-container tbody td {
+  padding: 10px 2px;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.transaction-container tbody td img {
+  width: 70px;
+}
+
+.transaction-container .btn-transaction-accept {
+  background-color: var(--color-btn-green-1);
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+  padding: 7px;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.transaction-container .btn-transaction-decline {
+  background-color: var(--color-btn-red);
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+  padding: 7px;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.transaction-container tbody td:nth-child(1) input[type="radio"] {
+  /* width: 100%; */
+  cursor: pointer;
+}
+
+.transaction-container tbody td:nth-child(1) p {
+  font-size: 0.9rem;
+  padding: 0;
+  margin: 0;
+}
+
+.transaction-container thead td:nth-child(1),
+.transaction-container tbody td:nth-child(1) {
+  width: 10%;
+}
+
+.transaction-container thead td:nth-child(2),
+.transaction-container tbody td:nth-child(2) {
+  width: 15%;
+}
+
+.transaction-container thead td:nth-child(3),
+.transaction-container tbody td:nth-child(3) {
+  width: 15%;
+}
+
+.transaction-container thead td:nth-child(4),
+.transaction-container tbody td:nth-child(4) {
+  width: 15%;
+}
+
+.transaction-container thead td:nth-child(5),
+.transaction-container tbody td:nth-child(5) {
+  width: 15%;
+}
+
+.transaction-container thead td:nth-child(6),
+.transaction-container tbody td:nth-child(6) {
+  width: 15%;
+}
+
+.transaction-container thead td:nth-child(7),
+.transaction-container tbody td:nth-child(7) {
+  width: 15%;
+  text-align: center;
+}
+
+/* TRANSACTION END ========================================================================================================================= */
+
+.calendar-section {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 0;
+  z-index: 11;
+}
+
+#calendar-text {
+  width: 100%;
+  background-color: #000;
+  color: #fff;
+  padding: 10px 0;
+  margin: 0;
+  text-align: center;
+}
+
+.calendar-container {
+  width: 350px;
+  margin: 20px 50px;
+  border: 1px solid #333;
+  border-radius: 10px;
+  background-color: #333;
+  color: #fff;
+}
+
+.calendar-container .calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #444;
+}
+
+.calendar-container .month-title {
+  font-size: 1.5em;
+}
+
+.calendar-container .calendar {
+  text-align: center;
+}
+
+.calendar-container .days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.calendar-container .day {
+  padding: 10px;
+  border: 1px solid #444;
+  text-align: center;
+}
+
+.calendar-container .dates {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.calendar-container .date {
+  padding: 10px;
+  border: 1px solid #444;
+  text-align: center;
+}
+
+.calendar-container .date.available {
+  background-color: var(--color-btn-green);
+  color: #fff;
+  cursor: pointer;
+}
+
+.calendar-container .date.not-available {
+  background-color: var(--color-btn-red);
+  color: white;
+  /* cursor: not-allowed; */
+}
+
+.calendar-container .date.selected-range {
+  background-color: blue;
+  color: #fff;
+}
+
+.calendar-section .input-container {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  text-align: center;
+  margin: 20px auto;
+}
+
+#start-date,
+#end-date {
+  padding: 10px;
+  margin: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 40%;
+  pointer-events: none;
+}
+
+#btn-calendar-cancel {
+  background-color: var(--color-btn-red);
+  width: 30% !important;
+  margin: 0 15px 10px 15px;
+}
+
+#btn-calendar-save {
+  background-color: var(--color-btn-green);
+  width: 30% !important;
+  margin: 0 15px 10px 15px;
+  opacity: 1;
+}
+
+#btn-calendar-save.disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
