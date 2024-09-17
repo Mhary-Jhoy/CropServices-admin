@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CropServices</title>
+    <link rel="stylesheet" href="./../css/Root-Style.css" />
+
+    <link rel="stylesheet" href="./../css/Dashboard-Style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="header-container">
+        <img
+          src="./../media/icons/icons8-speech-bubble-100.png"
+          alt=""
+          style="display: none"
+        />
+        <img src="./../media/icons/icons8-person-64.png" alt="img" />
+        <div class="profile-dropdown">
+          <h1>Admin</h1>
+          <img src="./../media/icons/icons8-down-100.png" alt="img" />
+        </div>
+
+        <div class="profile-dropdown-content">
+          <!-- <button class="btn-profile">
+            <img src="./../media/icons/icons8-person-100.png" alt="img" />
+            Profile
+          </button>
+          <button class="btn-inbox">
+            <img src="./../media/icons/icons8-email-black.png" alt="img" />
+            Inbox
+          </button> -->
+          <button class="btn-logout">
+            <img src="./../media/icons/icons8-logout-100.png" alt="img" />
+            Logout
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <div id="add-overlay"></div>
+    <div class="container">
+      <aside>
+        <img src="./../media/cropservicesnew.png" alt="img" class="logo" />
+
+        <button class="btn-dashboard">
+          <img src="./../media/icons/icons8-laptop-metrics-100.png" alt="img" />
+          <span>Dashboard</span>
+        </button>
+
+        <button class="btn-tools">
+          <img src="./../media/icons/icon-tool-black.png" alt="img" />
+          <span>Tools</span>
+        </button>
+
+        <button class="btn-machinery">
+          <img src="./../media/icons/icons8-tractor-black.png" alt="img" />
+          <span>Machinery</span>
+        </button>
+
+        <button class="btn-land">
+          <img src="./../media/icons/icons8-country-black.png" alt="img" />
+          <span>Land</span>
+        </button>
+
+        <button class="btn-hiring">
+          <img src="./../media/icons/icons8-hiring-100.png" alt="img" />
+          <span>Hiring Posts</span>
+        </button>
+
+        <button class="btn-transaction" id="btn-transaction">
+          <img src="./../media/icons/icon-transaction.png" alt="img" />
+          <span>Transactions</span>
+        </button>
+
+        <button class="btn-pending" id="btn-pending">
+          <img src="./../media/icons/icons8-hourglass-100.png" alt="img" />
+          <span>Pending</span>
+        </button>
+      </aside>
+
+      <main>
+        <section class="dashboard-container">
+          <h1 class="h1-label">Overview</h1>
+
+          <div class="dashboard-card" id="btn-dashboard-user">
+            <img src="./../media/icons/icons8-person-white.png" alt="img" />
+            <h1 id="users-count">0</h1>
+            <h2>Total users</h2>
+          </div>
+
+          <div class="dashboard-card" id="btn-dashboard-transactions">
+            <img src="./../media/icons/icon-transaction white.png" alt="img" />
+            <h1 id="transactions-count">0</h1>
+            <h2>Transactions</h2>
+          </div>
+
+          <div class="dashboard-card" id="btn-dashboard-pending">
+            <img
+              src="./../media/icons/icons8-hourglass-100 (1).png"
+              alt="img"
+            />
+            <h1 id="pending-count">0</h1>
+            <h2>Pending</h2>
+          </div>
+
+          <div class="dashboard-card" id="btn-dashboard-tools">
+            <img src="./../media/icons/icon-tool-white.png" alt="img" />
+            <h1 id="tools-count">0</h1>
+            <h2>Tools</h2>
+          </div>
+
+          <div class="dashboard-card" id="btn-dashboard-machinery">
+            <img src="./../media/icons/icons8-tractor-64.png" alt="img" />
+            <h1 id="machinery-count">0</h1>
+            <h2>Machinery</h2>
+          </div>
+
+          <div class="dashboard-card" id="btn-dashboard-land">
+            <img src="./../media/icons/icons8-country-64.png" alt="img" />
+            <h1 id="land-count">0</h1>
+            <h2>Land</h2>
+          </div>
+        </section>
+
+        <section class="calendar-section" id="calendar-section">
+          <h1 id="calendar-text">Set date for the product</h1>
+          <div class="calendar-container">
+            <div class="calendar-header">
+              <button id="prev-month">«</button>
+              <div class="month-title" id="month-title">Month Year</div>
+              <button id="next-month">»</button>
+            </div>
+            <div class="calendar">
+              <div class="days">
+                <div class="day">MO</div>
+                <div class="day">TU</div>
+                <div class="day">WE</div>
+                <div class="day">TH</div>
+                <div class="day">FR</div>
+                <div class="day">SA</div>
+                <div class="day">SU</div>
+              </div>
+              <div class="dates" id="dates"></div>
+            </div>
+          </div>
+          <div class="input-container">
+            <input type="date" id="start-date" placeholder="Start Date" />
+            <input type="date" id="end-date" placeholder="End Date" />
+          </div>
+          <div class="btn-container">
+            <button id="btn-calendar-cancel">Cancel</button>
+            <button id="btn-calendar-save" class="disabled">Save</button>
+          </div>
+        </section>
+
+        <section class="tools-container">
+          <h1 class="h1-label">Tools Details</h1>
+
+          <div class="btn-container">
+            <button id="btn-tools-change-date">Change Available Date</button>
+            <button class="btn-add-tools">+ Add Tools</button>
+          </div>
+
+          <div class="add-tools-container">
+            <button class="btn-close-add-tools">X</button>
+            <h1>Add Tools</h1>
+
+            <div id="tools-form" style="display: grid" class="tools-inp-field">
+              <label for="tools-inp-img">Tool Image</label>
+              <input
+                type="file"
+                id="tools-inp-img"
+                class="tools-inp-img"
+                maxlength="1"
+                accept="image/*"
+                required
+              />
+
+              <label for="tools-inp-owner">Name</label>
+              <input
+                type="text"
+                id="tools-inp-owner"
+                class="tools inp-owner"
+                required
+              />
+
+              <label for="tools-inp-contact">Contact</label>
+              <input
+                type="text"
+                id="tools-inp-contact"
+                class="tools inp-contact"
+                required
+              />
+
+              <label for="tools-inp-location">Location</label>
+              <input
+                type="text"
+                id="tools-inp-location"
+                class="tools inp-location"
+                required
+              />
+
+              <label for="tools-inp-price">Price per Day</label>
+              <input
+                type="number"
+                id="tools-inp-price"
+                class="tools inp-price"
+                required
+              />
+
+              <div class="date-input-container">
+                <label for="set-tools-date">Available Date</label>
+                <button id="set-tools-date">Set Available Date</button>
+
+                <div>
+                  <label>Start Date</label>
+                  <input type="date" id="tools-inp-start-date" disabled />
+                </div>
+
+                <div>
+                  <label>End Date</label>
+                  <input type="date" id="tools-inp-end-date" disabled />
+                </div>
+              </div>
+
+              <button class="btn-insert-tools" type="submit">Add Tool</button>
+            </div>
+          </div>
+
+          <table>
+            <thead>
+              <td></td>
+              <td>Tools</td>
+              <td>Name</td>
+              <td>Contact</td>
+              <td>Location</td>
+              <td>Rent per Day</td>
+              <td>Action</td>
+            </thead>
+
+            <tbody class="tools-tbody"></tbody>
+          </table>
+        </section>
+
+        <section class="machinery-container">
+          <h1 class="h1-label">Machinery Details</h1>
+
+          <div class="btn-container">
+            <button id="btn-machinery-change-date">
+              Change Available Date
+            </button>
+            <button id="btn-machinery-add-operator">Add Operator</button>
+            <button id="btn-machinery-remove-operator">Remove Operator</button>
+            <button class="btn-add-machinery">+ Add Machinery</button>
+          </div>
+
+          <form class="add-machinery-operator" id="add-machinery-operator">
+            <div class="top-container">
+              <div class="left-container">
+                <img src="" id="add-operator-img" />
+                <input
+                  required
+                  type="file"
+                  name="inp-img"
+                  accept="image/*"
+                  maxlength="1"
+                />
+              </div>
+
+              <div class="right-container">
+                <div class="inp-field">
+                  <label for="inp-name">Name:</label>
+                  <input required type="text" name="inp-name" id="inp-name" />
+                </div>
+
+                <div class="inp-field">
+                  <label for="inp-age">Age:</label>
+                  <input
+                    required
+                    type="number"
+                    name="inp-age"
+                    id="inp-age"
+                    min="1"
+                  />
+                </div>
+
+                <div class="inp-field">
+                  <label for="inp-address">Address:</label>
+                  <input
+                    required
+                    type="text"
+                    name="inp-address"
+                    id="inp-address"
+                  />
+                </div>
+
+                <div class="inp-field">
+                  <label for="inp-skills">Skills:</label>
+                  <input
+                    required
+                    type="text"
+                    name="inp-skills"
+                    id="inp-skills"
+                  />
+                </div>
+
+                <div class="inp-field">
+                  <label for="inp-experience">Experience:</label>
+                  <input
+                    required
+                    type="text"
+                    name="inp-experience"
+                    id="inp-experience"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="btn-container">
+              <button id="btn-add-operator-cancel" type="button">Cancel</button>
+              <button id="btn-add-operator-add" type="submit">Add</button>
+            </div>
+          </form>
+
+          <div
+            class="machine-operators-container"
+            id="machine-operators-container"
+          >
+            <div class="machine-operator-header">
+              <button id="btn-machine-operator-close">&#120;</button>
+            </div>
+
+            <div
+              class="machine-operators-content"
+              id="machine-operators-content"
+            ></div>
+          </div>
+
+          <div class="add-machinery-container">
+            <button class="btn-close-add-machinery">X</button>
+            <h1>Add Machinery</h1>
+
+            <div style="display: grid" class="machinery-inp-field">
+              <label for="machinery-inp-img">Machinery Image</label>
+              <input
+                type="file"
+                id="machinery-inp-img"
+                class="machinery-inp-img"
+                maxlength="1"
+                accept="image/*"
+                required
+              />
+
+              <label for="machinery-inp-name">Name</label>
+              <input
+                type="text"
+                id="machinery-inp-name"
+                class="machinery inp-name"
+                required
+              />
+
+              <label for="machinery-inp-brand">Brand Name</label>
+              <input
+                type="text"
+                id="machinery-inp-brand"
+                class="machinery inp-brand"
+                required
+              />
+
+              <label for="machinery-inp-location">Location</label>
+              <input
+                type="text"
+                id="machinery-inp-location"
+                class="machinery inp-location"
+                required
+              />
+
+              <label for="machinery-inp-color">Color</label>
+              <input
+                type="text"
+                id="machinery-inp-color"
+                class="machinery inp-color"
+                required
+              />
+
+              <label for="machinery-inp-condition">Condition</label>
+              <input
+                type="text"
+                id="machinery-inp-condition"
+                class="machinery inp-condition"
+                required
+              />
+
+              <label for="machinery-inp-price">Cost per Hectare</label>
+              <input
+                type="number"
+                id="machinery-inp-price"
+                class="machinery inp-price"
+                required
+              />
+
+              <div class="date-input-container">
+                <label for="set-machinery-date">Available Date</label>
+                <button id="set-machinery-date">Set Available Date</button>
+
+                <div>
+                  <label>Start Date</label>
+                  <input type="date" id="machinery-inp-start-date" disabled />
+                </div>
+
+                <div>
+                  <label>End Date</label>
+                  <input type="date" id="machinery-inp-end-date" disabled />
+                </div>
+              </div>
+
+              <button class="btn-insert-machinery" type="submit">
+                Add Machinery
+              </button>
+            </div>
+          </div>
+
+          <table>
+            <thead>
+              <td></td>
+              <td>Machinery</td>
+              <td>Name</td>
+              <td>Brand Name</td>
+              <td>Location</td>
+              <td>Color</td>
+              <td>Condition</td>
+              <td>Rent per hectare</td>
+              <td>Action</td>
+            </thead>
+
+            <tbody class="machinery-tbody"></tbody>
+          </table>
+        </section>
+
+        <section class="land-container">
+          <h1 class="h1-label">Land Details</h1>
+
+          <div class="btn-container">
+            <button
+              id="btn-land-change-date"
+              style="opacity: 0; pointer-events: none"
+            >
+              Change Available Date
+            </button>
+            <button class="btn-add-land">+ Add Land</button>
+          </div>
+
+          <div class="add-land-container">
+            <button class="btn-close-add-land">X</button>
+            <h1>Add Land</h1>
+
+            <div style="display: grid" class="land-inp-field">
+              <label for="land-inp-img">Land Image</label>
+              <input
+                type="file"
+                id="land-inp-img"
+                class="land-inp-img"
+                maxlength="1"
+                accept="image/*"
+                required
+              />
+
+              <label for="land-inp-owner">Owner</label>
+              <input
+                type="text"
+                id="land-inp-owner"
+                class="land inp-owner"
+                required
+              />
+
+              <label for="land-inp-contact">Contact</label>
+              <input
+                type="text"
+                id="land-inp-contact"
+                class="land inp-contact"
+                required
+              />
+
+              <label for="land-inp-location">Location</label>
+              <input
+                type="text"
+                id="land-inp-location"
+                class="land inp-location"
+                required
+              />
+
+              <label for="land-inp-hectare">Hectare</label>
+              <input
+                type="number"
+                id="land-inp-hectare"
+                class="land inp-hectare"
+                required
+              />
+
+              <label for="land-inp-square-meter">Square Meter</label>
+              <input
+                type="number"
+                id="land-inp-square-meter"
+                class="land inp-square-meter"
+                required
+              />
+
+              <label for="land-inp-price">Price per Month/ Hectare</label>
+              <input
+                type="number"
+                id="land-inp-price"
+                class="land inp-price"
+                required
+              />
+
+              <!-- <div class="date-input-container">
+                <label for="set-land-date">Available Date</label>
+                <button id="set-land-date">Set Available Date</button>
+
+                <div>
+                  <label>Start Date</label>
+                  <input type="date" id="land-inp-start-date" disabled />
+                </div>
+
+                <div>
+                  <label>End Date</label>
+                  <input type="date" id="land-inp-end-date" disabled />
+                </div>
+              </div> -->
+
+              <button class="btn-insert-land" type="submit">Add Land</button>
+            </div>
+          </div>
+
+          <table>
+            <thead>
+              <td></td>
+              <td>Land</td>
+              <td>Owner</td>
+              <td>Contact</td>
+              <td>location</td>
+              <td>Hectare</td>
+              <td>Square Meter</td>
+              <td>Rent per Hectare</td>
+              <td>Action</td>
+            </thead>
+
+            <tbody class="land-tbody"></tbody>
+          </table>
+        </section>
+
+        <section class="transaction-container">
+          <h1 class="h1-label">Transactions Details</h1>
+
+          <table>
+            <thead>
+              <td>Type</td>
+              <td>Name/Owner</td>
+              <td>Location</td>
+              <td>Date/Duration</td>
+              <td>User</td>
+              <td>Amount</td>
+              <td></td>
+            </thead>
+
+            <tbody id="transaction-tbody"></tbody>
+          </table>
+        </section>
+
+        <section class="pending-container">
+          <h1 class="h1-label">Pending Details</h1>
+
+          <table>
+            <thead>
+              <td>Type</td>
+              <td>Owner</td>
+              <td>Date Uploaded</td>
+              <td></td>
+            </thead>
+
+            <tbody id="pending-tbody"></tbody>
+          </table>
+        </section>
+      </main>
+    </div>
+
+    <script
+      src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js"
+      type="module"
+    ></script>
+    <script
+      src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js"
+      type="module"
+    ></script>
+    <script
+      src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js"
+      type="module"
+    ></script>
+
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+
+    <script type="module" src="./../js/Dashboard-Script.js"></script>
+    <script type="module" src="./../js/Tools-Script.js" defer></script>
+    <script type="module" src="./../js/Machinery-Script.js" defer></script>
+    <script type="module" src="./../js/Land-Script.js" defer></script>
+    <script type="module" src="./../js/Transaction-Script.js" defer></script>
+    <script type="module" src="./../js/Pending-Script.js" defer></script>
+  </body>
+</html>
